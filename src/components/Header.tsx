@@ -1,5 +1,6 @@
 'use client'
 import Image from 'next/image'
+import Link from 'next/link'  // next/link 추가
 import { useActiveTab } from '../hooks/useActiveTab'
 import { useDarkMode } from '../hooks/useDarkMode'
 
@@ -38,13 +39,13 @@ export default function Header() {
 
         <nav className="main-nav">
           {tabs.map((tab) => (
-            <a
+            <Link
               key={tab.href}
               href={tab.href}
               className={mainTab === tab.href.slice(1) ? 'active' : ''}
             >
               {tab.label}
-            </a>
+            </Link>
           ))}
         </nav>
       </div>
