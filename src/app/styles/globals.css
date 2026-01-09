@@ -11,6 +11,8 @@
   --color-bg: #f6f7f9;
   --color-bg-white: #ffffff;
   --color-border: #e5e7eb;
+  --color-border-light: #d1d5db; /* 연한 회색, 예시 */
+
 
   --spacing-xs: 4px;
   --spacing-sm: 8px;
@@ -67,11 +69,14 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  transition: none; /* transition 제거 */
 }
 
 html {
-  font-size: 16px;
+  overflow-y: scroll;
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -101,6 +106,26 @@ img {
   height: auto;
   display: block;
 }
+
+/* 전역 스크롤바 스타일 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-light);
+  border-radius: var(--border-radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
+
 
 /* =========================
    레이아웃: 헤더 / 서브헤더 / 페이지 / 푸터
@@ -163,7 +188,7 @@ img {
   font-size: 1rem; /* 글씨 크기 키움 */
   padding-bottom: 2px;
   position: relative;
-  color: var(--color-text);
+  color: #6c6c6c;
   transition: color 0.3s ease;
 }
 
@@ -249,20 +274,23 @@ img {
 /* ===== 메인 페이지 영역 ===== */
 .page {
   flex: 1;
-  max-width: var(--max-width);
-  margin: 30px auto;
-  padding: 0 20px;
+  width: 100%; /* 화면 폭 전체 사용 */
+  margin: 20px auto; /* 중앙 정렬 + 위아래 여백 */
+  padding: 0 20px; /* 좌우 패딩 */
+  box-sizing: border-box;
 }
+
 
 .content-area {
   background-color: var(--color-bg-white);
   border-radius: var(--border-radius-lg);
   padding: var(--spacing-xl);
   box-shadow: var(--shadow-lg);
-  width: 100%;
+  width: 100%; /* 부모 폭 그대로 */
   box-sizing: border-box;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.35s ease, color 0.35s ease;
 }
+
 
 /* ===== 푸터 ===== */
 .footer {
@@ -274,6 +302,8 @@ img {
   border-top: 1px solid rgba(0,0,0,0.1);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+
 
 /* =========================
    반응형
