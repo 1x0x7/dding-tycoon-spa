@@ -1,8 +1,12 @@
-export default function OceanPage() {
+'use client'
+
+export default function OceanInfoPage() {
   return (
-    <section>
-      <h1 className="text-xl font-bold mb-2">해양</h1>
-      <p>해양 정보 영역</p>
+    <section className="content-area">
+      <h2 className="content-title">해양 정보</h2>
+      <p className="tab-content">
+        해양 채집 기본 정보 및 시스템 설명
+      </p>
     </section>
-  );
+  )
 }

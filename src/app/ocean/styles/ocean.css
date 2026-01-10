@@ -1,0 +1,26 @@
+/* ===== 해양 서브탭 ===== */
+.subtab {
+  display: flex;
+  gap: 8px;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.subtab-item {
+  padding: 10px 16px;
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.subtab-item.active {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* ===== 해양 전용 카드 ===== */
+.ocean-card {
+  margin-top: var(--spacing-lg);
+}
